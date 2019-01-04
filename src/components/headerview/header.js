@@ -5,7 +5,7 @@ import { Icon } from 'native-base';
 
 import colours from "../../theme/colors";
 
-const Header = ({ onPress, onCreatePress, onSearchPress, getHeaderText, isbackVisible, isSerIconVisible, isCreateIconVisible, isNotificationIconVisible, onNotificationPress }) => {
+const Header = ({ onPress, getHeaderText, isbackVisible,}) => {
 
     var marginTop = 0
     if (Platform.OS === 'ios') {
@@ -26,11 +26,8 @@ const Header = ({ onPress, onCreatePress, onSearchPress, getHeaderText, isbackVi
                 <TouchableOpacity style={{ 
                     alignItems: "flex-end", justifyContent: 'center', 
                     flex: 1, marginBottom: 5, padding: 10, paddingRight: 15}} >
-                    {/* {isNotificationIconVisible && 
-                    <TouchableOpacity onPress={onNotificationPress} style={{ alignItems: "flex-end", justifyContent: 'center', marginBottom: 5, padding: 10 }} > */}
-                        <Icon name='ios-notifications' style={{ color: colours.lightgray }} />
-                    {/* </TouchableOpacity>
-                    } */}
+                    <Icon name='ios-notifications' style={{ color: colours.lightgray }} />
+                    
                 </TouchableOpacity>
             </View>
         </View>

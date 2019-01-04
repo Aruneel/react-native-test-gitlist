@@ -1,11 +1,3 @@
-//login
-export const LOGIN_SUCCESS = 'login_success';
-export const LOGIN_FAILURE = 'login_failure';
-export const API_LOGIN = 'api_login';
-export const RESET_LOGIN = "login_reset";
-
-//Logout
-export const LOGOUT = 'logout';
 
 //git
 export const GET_GIT_DATA = 'get_git_data'; 

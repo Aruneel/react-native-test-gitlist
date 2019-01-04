@@ -18,8 +18,6 @@ export const getGitData = () => {
                 });
             })
             .catch(error => {
-                // console.error(error);
-                // console.log('err ', error)
                 dispatch({
                     type: GET_GIT_DATA_FAILURE,
                     payload: error

@@ -6,15 +6,11 @@ import {
     TouchableOpacity,
     TouchableWithoutFeedback,
     FlatList,
-    StyleSheet,
-    AsyncStorage,
     Keyboard
 
 } from 'react-native';
 import { Icon } from 'native-base';
 import { connect } from 'react-redux';
-import styles from './styles';
-import * as Constants from '../../utils/Constants';
 import { getGitData, resetGetGitData } from '../../actions/ApiActions';
 import colors from '../../theme/colors';
 
@@ -59,7 +55,6 @@ class ListView extends Component {
 
     onPressSearch() {
         Keyboard.dismiss()
-        console.log('searched ', this.state.searchText)
         var arrEle = this.state.searchText
         var newArray = []
         if (this.state.searchText.trim().length !== 0) {
@@ -128,22 +123,8 @@ class ListView extends Component {
 
     render() {
 
-        // console.log('loading ', this.props.gitDataLoading)
-        // console.log('success ', this.props.gitDataSuccess)
-        // console.log('error ', this.props.error)
-
-        // console.log('response ', this.props.gitData)
-
         if (this.state.isSearched) {
-            // console.log('here')
             datas = this.state.searchedArray
-            // if (datas.length === 0 && this.state.isSearched) {
-            //     return (
-            //         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            //             <Text>No results Found.</Text>
-            //         </View>
-            //     )
-            // }
         }
         else {
             datas = this.props.gitData
@@ -212,4 +193,3 @@ const mapStateToProps = ({ githubReducer }) => {
 }
 
 export default connect(mapStateToProps, { getGitData, resetGetGitData })(ListView);
-// export default ListView;

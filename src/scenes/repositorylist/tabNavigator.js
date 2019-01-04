@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { createMaterialTopTabNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator, createAppContainer } from 'react-navigation';
 import ListView from './listView';
 import color from "../../theme/colors";
-import * as Constants from '../../utils/Constants';
+
 
 class OverviewScreen extends React.Component {
   render() {
