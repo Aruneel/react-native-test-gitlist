@@ -5,16 +5,17 @@ import { Icon } from 'native-base';
 
 import colours from "../../theme/colors";
 
-const Header = ({ onPress, getHeaderText, isbackVisible,}) => {
+const Header = ({ onPress, getHeaderText, isbackVisible, onPressMenu, navigate}) => {
 
     var marginTop = 0
     if (Platform.OS === 'ios') {
         marginTop = 15
     }
+    console.log('props-------------------->',navigate)
     return (
         <View style={[styles.imageContainer, { marginTop: marginTop }]}>
             <View style={{ height: 60, flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>
-                <TouchableOpacity onPress={onPress} style={{ flexDirection: 'row', 
+                <TouchableOpacity onPress={()=>{navigate.openDrawer()}} style={{ flexDirection: 'row', 
                         justifyContent: 'flex-start', alignItems: "center", 
                         flex: 1, marginBottom: 5, padding: 10, paddingLeft: 15 }} >
                     {isbackVisible ? <Icon name='arrow-back' style={{ color: colours.black }} /> : <Icon name='md-menu' style={{ color: colours.lightgray }} />}
