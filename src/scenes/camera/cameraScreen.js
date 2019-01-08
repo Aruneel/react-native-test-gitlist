@@ -58,12 +58,11 @@ class CameraScreen extends Component {
                         this.props.navigation.navigate('PreviewScreen', { uri: data.uri,});
                     }
                 )
-            console.log(data.uri);
+            
         }
     };
 
     render() {
-        console.log('camera props ---->', this.props.screenProps)
         return (
 
             <View style={{ flex: 1, }} >
@@ -90,7 +89,7 @@ class CameraScreen extends Component {
                             permissionDialogTitle={'Permission to use camera'}
                             permissionDialogMessage={'We need your permission to use your camera phone'}
                             onGoogleVisionBarcodesDetected={({ barcodes }) => {
-                                console.log(barcodes)
+                                
                             }}
                         />
                        

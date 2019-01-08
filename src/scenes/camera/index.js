@@ -31,7 +31,6 @@ const AppContainer = createAppContainer(AppNavigator);
 
 export default class Camera extends Component {
     render() {
-        console.log('main props---->', this.props.navigation)
         return (
             <Root>
                 <AppContainer screenProps={this.props.navigation}/>

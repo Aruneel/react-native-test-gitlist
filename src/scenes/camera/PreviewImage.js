@@ -38,30 +38,27 @@ class PreviewImage extends Component {
             height: 400,
 
         }).then(image => {
-            console.log(image)
             this.setState({ croppedHeight: image.cropRect.y || image.cropRect.height, croppedWidth: image.cropRect.x || image.cropRect.width })
             this._onPressResizePhoto(image.path)
 
 
         })
             .catch(err => {
-                console.log(err)
                 this.props.navigation.navigate('CameraScreen')
             })
     }
 
 
     _onPressResizePhoto(imageUri) {
-        console.log('resize')
         ImageResizer.createResizedImage(imageUri, this.state.croppedWidth, this.state.croppedHeight, 'JPEG', 100)
             .then(res => {
-                console.log(res);
+                
                 this.setState({
                     resizedImageUri: res.uri,
                 });
             })
             .catch(err => {
-                console.log(err);
+                
                 return Alert.alert('Unable to resize the photo', 'Check the console for full the error message');
             });
     }
@@ -130,7 +127,6 @@ class PreviewImage extends Component {
         if (this.camera) {
             const options = { quality: 0.5, base64: true };
             const data = await this.camera.takePictureAsync(options)
-            // console.log(data.uri);
         }
     };
 }

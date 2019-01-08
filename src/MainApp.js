@@ -45,7 +45,7 @@ export default class MainApp extends Component {
   }
 
   async requestStoragePermission() {
-    console.log('rfs')
+   
     try {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
@@ -56,15 +56,14 @@ export default class MainApp extends Component {
         }
       )
       if (granted === PermissionsAndroid.RESULTS.GRANTED || Platform.Version <= 22) {
-        console.log("You can use the storage")
+        
 
       } else {
-        console.log("Storage permission denied")
+        
         Alert.alert(
           'Please allow storage access',
           'Go to app setting and enable storage permission',
-          // [{text: 'Go to settings', onPress: () => Permissions.openSettings()}],
-          // {cancelable: false}
+          
         );
       }
     } catch (err) {
