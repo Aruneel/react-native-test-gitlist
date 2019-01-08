@@ -11,7 +11,7 @@ const Header = ({ onPress, getHeaderText, isbackVisible, onPressMenu, navigate})
     if (Platform.OS === 'ios') {
         marginTop = 15
     }
-    console.log('props-------------------->',navigate)
+    console.log('props header-------------------->',navigate)
     return (
         <View style={[styles.imageContainer, { marginTop: marginTop }]}>
             <View style={{ height: 60, flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>

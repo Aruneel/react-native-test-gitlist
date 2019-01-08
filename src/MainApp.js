@@ -5,6 +5,7 @@ import RepositoryListView from './scenes/repositorylist';
 import Camera from './scenes/camera';
 import colors from './theme/colors';
 import {Icon} from 'native-base';
+import Header from './components/headerview/header';
 
 const uri = "https://norwestcoop.ca/wp-content/uploads/2017/06/person.png";
 const CustomDrawerComponent = (props) => {

@@ -11,8 +11,10 @@ import { RNCamera } from 'react-native-camera';
 import { Icon } from 'native-base';
 import Header from '../../components/headerview/header'
 import colors from '../../theme/colors';
+import {withNavigation} from 'react-navigation';
 
-export default class CameraScreen extends Component {
+
+class CameraScreen extends Component {
 
     constructor(props) {
         super(props);
@@ -61,13 +63,14 @@ export default class CameraScreen extends Component {
     };
 
     render() {
-
+        console.log('camera props ---->', this.props.screenProps)
         return (
 
             <View style={{ flex: 1, }} >
                 <Header
                     isbackVisible={false}
                     isNotificationIconVisible={true}
+                    navigate={this.props.screenProps}
                 />
 
                 <ScrollView style={{ flex: 1, margin: 5, }}>
@@ -111,6 +114,8 @@ export default class CameraScreen extends Component {
         );
     }
 }
+
+export default withNavigation(CameraScreen);
 
 const styles = StyleSheet.create({
     container: {
